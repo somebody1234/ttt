@@ -1,7 +1,9 @@
 # The Typescript Tome
-Welcome! The Typescript Tome aims to be a comprehensive guide on 
+Welcome! The Typescript Tome aims to be a comprehensive guide on TypeScript features, pitfalls, tooling and more.
 
-Please note that this is a community effort
+This is a community effort, so feel free to contribute or point out issues.
+
+(Disclaimer: This repository currently lacks a license)
 
 # Quick Links
 - If you have an issue with your code, check [the list of common issues](common-issues) to see if it's there.
