@@ -3,13 +3,14 @@ This page lists various tips related to type annotations.
 Note that tooling and framework tips are out of scope for this document.
 
 ## Never use `any`
-Using `any` is basically disabling TypeScript -
+Using `any` is basically disabling type checking -
 which is probably the opposite of your goal when you're using TypeScript.
-It should only be used as a last resort, when the alternatives are even worse.
+It should only be used as a last resort,
+when the alternatives (if any exist) are even less desirable.
 
 For example:
 - A complicated type that would otherwise require conditional types
-  - See the next tip for alternatives
+  (see the next tip for alternatives)
 - Dynamic imports
 
 ## Avoid conditional types
@@ -54,3 +55,11 @@ type ReadonlyExtendsNonReadonly = ReadonlyT extends T ? true : false;
 type NonReadonlyExtendsReadonly = T extends ReadonlyT ? true : false;
 //   ^? - type NonReadonlyExtendsReadonly = true
 ```
+
+## Use `T extends T` instead of `T extends any` or `T extends unknown` for distributive conditional types
+They all always succeed, but `T extends T` has some benefits for maintainability:
+- avoiding `any` makes it easier to limit your usage of `any` - this also makes linters happy
+- `T` is shorter than both `any` and `unknown` -
+of course, this doesn't apply if you use long names for your generic parameters
+- intuitively, it's a lot easier to guess that `T` always `extends T` -
+you don't even need to know what `any` and `unknown` are

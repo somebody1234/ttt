@@ -8,6 +8,8 @@ will be named `a`, `b`, `c` or `A`, `B`, `C`, in that order.
 
 All functions take 0 parameters, unless the feature is related to function parameters.
 
+All strings will use single-quotes (`''`), except when template strings (`` ` ` ``) are necessary.
+
 If you still can't find the syntax construct, try using spaces in different places.
 
 JavaScript constructs are here for completeness,
@@ -26,8 +28,8 @@ Relevant links to the [Mozilla Developer Network JavaScript reference](https://d
   ([HB](https://www.typescriptlang.org/docs/handbook/namespaces.html))
 (soft deprecated - prefer `namespace`) (&lt;v1.0+)
 - [`namespace A {}`](language-reference/namespaces) - namespaces
-  ([v1.5+](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-5.html#namespace-keyword))
   ([HB](https://www.typescriptlang.org/docs/handbook/namespaces.html))
+  ([v1.5+](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-5.html#namespace-keyword), [i2159](https://github.com/microsoft/TypeScript/issues/2159), [pr2923](https://github.com/microsoft/TypeScript/pull/2923))
 - [`declare namespace A {}`](language-reference/namespace#ambient-namespace) - ambient namespace
   ([HB](https://www.typescriptlang.org/docs/handbook/namespaces.html#ambient-namespaces))
 - `a in b` - `in` operator
@@ -35,12 +37,20 @@ Relevant links to the [Mozilla Developer Network JavaScript reference](https://d
   ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in))
 - [`a as T`](language-reference/type-assertion) - type assertion, `as` operator
   ([HB](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions))
+  (v????+, [i296](https://github.com/microsoft/TypeScript/issues/296), [pr3564](https://github.com/microsoft/TypeScript/pull/3564))
 - [`<T> a`](language-reference/type-assertion) - type assertion (legacy)
 - [`<T>()`, `<T,>()`, `function a<T>`](language-reference/functions#generic-functions) - generic function
+- [`<div></div>`, `<a></a>`, `<div />`, `<a />`](language-reference/jsx) - JSX
+  ([HB])
+  ([MDN](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started))
+  (v++++?, [i3203](https://github.com/microsoft/TypeScript/issues/3203), [pr3564](https://github.com/microsoft/TypeScript/pull/3564))
 - [`type T`](language-reference/types) - type
 - [`type T<U>`](language-reference/types#generic-types) - generic type
 - [`class T`](language-reference/classes) - class
 - [`class T<U>`](language-reference/classes#generic-classes) - generic class
+- [`<const T>`](language-reference/generics#the-const-modifier) - `const` generic modifier
+  (~~HB~~)
+  ([v5.0+](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#the-const-generic-modifier), [i30680](https://github.com/microsoft/TypeScript/issues/30680), [i41114](https://github.com/microsoft/TypeScript/issues/41114), [pr51865](https://github.com/microsoft/TypeScript/pull/51865))
 - [`@a`](language-reference/decorators) - decorator
   ([v1.5+](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-5.html#decorators))
 - `#a` - JavaScript private field
@@ -90,8 +100,18 @@ Relevant links to the [Mozilla Developer Network JavaScript reference](https://d
   ([v3.4+](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#readonly-mapped-type-modifiers-and-readonly-arrays))
 - [`{ [a: string]: T; }`, `{ [a: number]: T; }`, `{ [a: T]: U; }`](language-reference/index-signatures) - index signature
 - [`a as const`](language-reference/const-assertions) - `const` assertion
-  ([v3.4+](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions))
+  ([v3.4+](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions), [i10195](https://github.com/microsoft/TypeScript/issues/10195), [i20195](https://github.com/microsoft/TypeScript/issues/20195), [i26979](https://github.com/microsoft/TypeScript/issues/26979), [pr29510](https://github.com/microsoft/TypeScript/pull/29510))
+
 <!-- TODO: just search through the changelogs -->
+<!--
+TODO
+https://github.com/microsoft/TypeScript/pull/29478
+-->
+
+## Non-syntax elements
+(Yes, they're technically not syntax, but they're included here for)
+- return type inference
+  (v3.4+, [i5487](https://github.com/microsoft/TypeScript/issues/5487), [i11152](https://github.com/microsoft/TypeScript/issues/11152), [pr29478](https://github.com/microsoft/TypeScript/pull/29478))
 
 ## Operators
 
@@ -121,6 +141,14 @@ Relevant links to the [Mozilla Developer Network JavaScript reference](https://d
   ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of))
 - `for await (const a of b)`, `for await (let a of b)`, `for await (var a of b)` - `for await`-`of` statement
   ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of))
+- `import a from 'b';`, `import * as a from 'b';`, `import { a } from 'b';`, `import { a as b } from 'c';` - ES6 module (ESM) `import` statement
+  ([HB](https://www.typescriptlang.org/docs/handbook/modules.html#import))
+  ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import))
+  (v????, [pr1983](https://github.com/microsoft/TypeScript/pull/1983))
+- `export * from 'a';`, `export ` - ES6 module (ESM) `export` statement
+  ([HB](https://www.typescriptlang.org/docs/handbook/modules.html#export))
+  ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
+  (v????, [pr1983](https://github.com/microsoft/TypeScript/pull/1983))
 
 <!-- remember to mention that classes are similar to interfaces-->
 <!--

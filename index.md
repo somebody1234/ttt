@@ -9,6 +9,7 @@ This is a community effort, so feel free to contribute or point out issues.
 - If you have an issue with your code, check [the list of common issues](common-issues) to see if it's there.
 - The [syntax cheatsheet](syntax-cheatsheet) is a list of all syntax constructs,
 linking to the appropriate pages in the [language reference](language-reference/).
+- The [glossary](glossary) is a list of all terms.
 - The [quick tips](quick-tips) page lists tips that help make your typings more idiomatic.
 - [The grimoire](the-grimoire) covers some advanced TypeScript behavior,
 like interactions between multiple features.
@@ -36,5 +37,10 @@ has comprehensive descriptions, common pitfalls, examples, and compatibility inf
     - `i` - [issue](https://github.com/microsoft/TypeScript/issues)
     - `ic` - comment on an issue
     - `pj` - [project](https://github.com/microsoft/TypeScript/projects?type=classic)
+- Other external domains are generally denoted by an abbreviation:
+  - `HB`: [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+  - `MDN`: [The Mozilla Developer Network](https://developer.mozilla.org/en-US/)
+  - `WP`: [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
+  - `SO`: [Stack Overflow](https://stackoverflow.com/)
 
 # Index
