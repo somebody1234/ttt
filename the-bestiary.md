@@ -2,15 +2,26 @@
 
 This page contains various helper types and useful constructs.
 
-Note that in general, needing advanced types like these
-are an indication that you're trying to get TypeScript to do too much.
+Note that in general, advanced types like this improve DX by only a bit,
+and are not worth the decrease in maintainability.
+Generally these should only be used in libraries, 
+
+<!-- TODO: the validator pattern, expand/deepexpand? -->
+
+## Notable mentions
+These are libraries that include many utility types, complementing the ones built into TypeScript.
+
+- [type-fest](https://github.com/sindresorhus/type-fest) -
+  "a collection of essential TypeScript types"
+- [ts-toolbelt](https://github.com/millsp/ts-toolbelt) -
+  "TypeScript's largest utility library"
 
 ## `AnyT`
 
 ```ts
 interface MyGeneric<T> { foo: T; }
 type AnyMyGeneric = MyGeneric<unknown>;
-type MyConditional<T extends string | number> = T extends string ? 'string' | 'number';
+type MyConditional<T extends string | number> = T extends string ? "string" | "number";
 type AnyMyConditional = MyConditional<any>;
 interface MyInvariantGeneric<T> { foo: T; bar(t: T): void; }
 type AnyMyInvariantGeneric = MyInvariantGeneric<any>;

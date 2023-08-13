@@ -6,10 +6,12 @@ This is a community effort, so feel free to contribute or point out issues.
 (Disclaimer: This repository currently lacks a license)
 
 # Quick Links
+<!-- - Check out [Getting Started](getting-started) for a guide on setting up your first TypeScript project. -->
 - If you have an issue with your code, check [the list of common issues](common-issues) to see if it's there.
 - The [syntax cheatsheet](syntax-cheatsheet) is a list of all syntax constructs,
 linking to the appropriate pages in the [language reference](language-reference/).
 - The [glossary](glossary) is a list of all terms.
+<!-- - There is a list of [built in utility types](built-in-utility-types). -->
 - The [quick tips](quick-tips) page lists tips that help make your typings more idiomatic.
 - [The grimoire](the-grimoire) covers some advanced TypeScript behavior,
 like interactions between multiple features.
